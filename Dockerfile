@@ -16,8 +16,6 @@ COPY . .
 
 RUN wget http://launchpadlibrarian.net/475574732/libssl1.1_1.1.1f-1ubuntu2_amd64.deb && \
     wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb && \
-    wget  http://archive.ubuntu.com/ubuntu/pool/main/c/curl/libcurl4t64_8.5.0-2ubuntu10.6_amd64.deb && \
-    dpkg -i libcurl4t64_8.5.0-2ubuntu10.6_amd64.deb && \
     dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb && \
     dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb && \
     cd /etc/apt && \
