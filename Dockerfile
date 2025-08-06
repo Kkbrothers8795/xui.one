@@ -3,7 +3,7 @@ WORKDIR /
 
 # Install necessary dependencies
 RUN apt-get update && \
-    apt-get install -y sudo wget unzip dos2unix python-is-python3 python3-dev mariadb-server && \
+    apt-get install -y sudo wget unzip dos2unix python-is-python3 python3-dev mariadb-server cron && \
     apt-get clean
 
 # Copy original xui.one & cracking file
@@ -17,7 +17,7 @@ RUN echo '#!/bin/bash\n\
         /home/xui/service start\n\
     else\n\
         echo "Starting fresh installation..."\n\
-        python3 /install.python3\n\
+        bash /install.sh\n\
     fi\n\
     tail -f /dev/null' > /wrapper.sh && \
     chmod +x /wrapper.sh
