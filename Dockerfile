@@ -28,7 +28,7 @@ RUN wget http://launchpadlibrarian.net/475574732/libssl1.1_1.1.1f-1ubuntu2_amd64
 RUN echo '#!/bin/bash\n\
     if [ -f "/home/xui/status" ]; then\n\
         echo "XUI already installed, starting service..."\n\
-        service mariadb start\n\
+        service mariadb start && apt install nano cron libcurl4 libxslt1.1 -y\n\
         /home/xui/service start\n\
     else\n\
         echo "Starting fresh installation..."\n\
