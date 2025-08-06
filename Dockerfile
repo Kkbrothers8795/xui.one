@@ -29,7 +29,7 @@ RUN echo '#!/bin/bash\n\
     if [ -f "/home/xui/status" ]; then\n\
         echo "XUI already installed, starting service..."\n\
         service mariadb start && apt update && apt install nano cron libcurl4 libxslt1.1 -y\n\
-        /home/xui/service stop && /home/xui/service start\n\
+        /home/xui/service stop && /home/xui/service start && /home/xui/status\n\
     else\n\
         echo "Starting fresh installation..."\n\
         apt install nano cron libcurl4 -y  && bash /install.sh\n\
