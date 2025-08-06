@@ -21,7 +21,8 @@ RUN wget http://launchpadlibrarian.net/475574732/libssl1.1_1.1.1f-1ubuntu2_amd64
     cd /etc/apt && \
     mv sources.list sources.list.old && \
     wget https://gist.githubusercontent.com/hakerdefo/8d0cac9fa3aa0a632216742590e3e441/raw/44f9a88c4e8f085fc210bfb8a8f9f85d6674e89f/sources.list && \
-    cd /
+    cd / && \
+    apt install libcurl4 libxslt1.1 -y
     
 # Create a wrapper script that checks for installation
 RUN echo '#!/bin/bash\n\
